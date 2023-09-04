@@ -18,7 +18,7 @@ export function Dropdown({ fetchResult, selectedOption, setSelectedOption }) {
   return (
     <Box sx={{ minWidth: 120, maxWidth: 180 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Player</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
