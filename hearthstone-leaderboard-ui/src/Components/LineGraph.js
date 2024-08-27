@@ -32,10 +32,14 @@ export function LineGraph({results}){
       let chart;
       const initializeChart = () => {
         const fetchData = results.map(result => [result.timeStamp, result.rating]);
-        let last = results[results.length-1];
+        
         
         const today = new Date(); 
-        fetchData.push([today.getTime(),last.rating])
+        if (results.length!==0) {
+          let last = results[results.length-1];
+          fetchData.push([today.getTime(),last.rating])
+        }
+        
         let options = {
             series: [{
             data: fetchData,
@@ -129,6 +133,7 @@ export function LineGraph({results}){
       
 
         initializeChart();
+        handleGraphButton(1,chart);
         return (
             <div>
                 <div className="toolbar">

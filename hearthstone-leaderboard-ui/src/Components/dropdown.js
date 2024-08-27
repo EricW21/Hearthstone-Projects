@@ -9,9 +9,10 @@ export function Dropdown({ fetchResult, selectedOption, setSelectedOption }) {
   
 
   const handleChange = (event) => {
-    if (fetchResult[event.target.value].length!==0){
+    if (fetchResult[event.target.value] && fetchResult[event.target.value].length!==0){
       setSelectedOption(event.target.value);
     }
+    
     
   };
 
@@ -27,14 +28,14 @@ export function Dropdown({ fetchResult, selectedOption, setSelectedOption }) {
           onChange={handleChange}
         >
           <MenuItem value={'jeef'}>Jeef</MenuItem>
-          <MenuItem value={'dog'}>Dog</MenuItem>
+          {/* <MenuItem value={'dog'}>Dog</MenuItem> */}
           <MenuItem value={'EBFRLH11'}>EBFRLH11</MenuItem>
-          <MenuItem value={'Bofur'}>Bofur</MenuItem>
+          {/* <MenuItem value={'Bofur'}>Bofur</MenuItem>
           <MenuItem value={'MATSURI'}>MATSURI</MenuItem>
           
           <MenuItem value={'jkirek'}>Jkirek</MenuItem>
           <MenuItem value={'BeterBabbit'}>BeterBabbit</MenuItem>
-          <MenuItem value={'awedragon'}>Awedragon</MenuItem>
+          <MenuItem value={'awedragon'}>Awedragon</MenuItem> */}
         </Select>
       </FormControl>
     </Box>

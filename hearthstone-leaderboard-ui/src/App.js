@@ -41,8 +41,12 @@ function App() {
       </div>
     )
   }
-  //let results = fetchResult.data.EBFRLH11;
+  
   let results = fetchResult[selectedOption];
+  if (!results){
+    results = fetchResult['EBFRLH11']
+  }
+  
   return (
     <div>
       <LineGraph results={results} />
@@ -54,6 +58,7 @@ function App() {
       
       <TableHeader results={results} />
       <DataTable results={results} timeDisplay={timeDisplay} />
+      
       
     </div>
   );
